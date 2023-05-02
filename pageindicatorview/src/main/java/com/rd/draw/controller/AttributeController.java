@@ -13,6 +13,7 @@ import com.rd.animation.type.BaseAnimation;
 import com.rd.animation.type.ColorAnimation;
 import com.rd.animation.type.FillAnimation;
 import com.rd.animation.type.ScaleAnimation;
+import com.rd.animation.type.SliderAnimation;
 import com.rd.draw.data.Indicator;
 import com.rd.draw.data.Orientation;
 import com.rd.draw.data.RtlMode;
@@ -134,11 +135,14 @@ public class AttributeController {
             stroke = 0;
         }
 
+        int sliderWidth = (int) typedArray.getDimension(R.styleable.PageIndicatorView_piv_sliderWidth, DensityUtils.dpToPx(SliderAnimation.DEFAULT_SLIDER_WIDTH));
+
         indicator.setRadius(radius);
         indicator.setOrientation(orientation);
         indicator.setPadding(padding);
         indicator.setScaleFactor(scaleFactor);
         indicator.setStroke(stroke);
+        indicator.setSliderWidth(sliderWidth);
     }
 
     private AnimationType getAnimationType(int index) {
@@ -163,6 +167,10 @@ public class AttributeController {
                 return AnimationType.SWAP;
             case 9:
                 return AnimationType.SCALE_DOWN;
+            case 10:
+                return AnimationType.WORM2;
+            case 11:
+                return AnimationType.SLIDER;
         }
 
         return AnimationType.NONE;

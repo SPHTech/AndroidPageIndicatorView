@@ -51,6 +51,8 @@ public class Indicator {
     private AnimationType animationType;
     private RtlMode rtlMode;
 
+    private int sliderWidth; // For "slider" animation only
+
     public int getHeight() {
         return height;
     }
@@ -277,5 +279,13 @@ public class Indicator {
 
     public void setRtlMode(RtlMode rtlMode) {
         this.rtlMode = rtlMode;
+    }
+
+    public int getSliderWidth() {
+        return sliderWidth;
+    }
+
+    public void setSliderWidth(int sliderWidth) {
+        this.sliderWidth = sliderWidth;
     }
 }

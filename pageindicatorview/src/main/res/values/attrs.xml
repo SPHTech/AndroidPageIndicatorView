@@ -38,12 +38,15 @@
             <enum name="drop" value="7" />
             <enum name="swap" value="8" />
             <enum name="scale_down" value="9" />
+            <enum name="worm2" value="10" />
+            <enum name="slider" value="11" />
         </attr>
         <attr name="piv_rtl_mode">
             <enum name="on" value="0" />
             <enum name="off" value="1" />
             <enum name="auto" value="2" />
         </attr>
+        <attr name="piv_sliderWidth" format="dimension"/>
     </declare-styleable>
 
 </resources>
