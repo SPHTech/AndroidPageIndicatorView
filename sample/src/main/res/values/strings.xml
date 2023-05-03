@@ -20,6 +20,8 @@
         <item>Drop</item>
         <item>Swap</item>
         <item>Scale Down</item>
+        <item>Worm2</item>
+        <item>Slider</item>
     </string-array>
 
     <string-array name="orientation">

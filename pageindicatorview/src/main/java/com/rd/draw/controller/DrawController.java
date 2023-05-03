@@ -86,7 +86,7 @@ public class DrawController {
         if (value != null && isSelectedItem) {
             drawWithAnimation(canvas);
         } else {
-            drawer.drawBasic(canvas, isSelectedItem);
+            drawBasic(canvas, isSelectedItem);
         }
     }
 
@@ -131,6 +131,21 @@ public class DrawController {
 
             case SCALE_DOWN:
                 drawer.drawScaleDown(canvas, value);
+                break;
+        }
+    }
+
+    private void drawBasic(@NonNull Canvas canvas, boolean isSelectedItem) {
+        AnimationType animationType = indicator.getAnimationType();
+        switch (animationType) {
+            case WORM2:
+                drawer.drawWorm2(canvas, value);
+                break;
+            case SLIDER:
+                drawer.drawSlider(canvas, value);
+                break;
+            default:
+                drawer.drawBasic(canvas, isSelectedItem);
                 break;
         }
     }

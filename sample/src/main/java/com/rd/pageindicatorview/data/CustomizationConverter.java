@@ -38,6 +38,12 @@ public class CustomizationConverter {
             case 9:
                 return AnimationType.SCALE_DOWN;
 
+            case 10:
+                return AnimationType.WORM2;
+
+            case 11:
+                return AnimationType.SLIDER;
+
             default:
                 return AnimationType.NONE;
         }

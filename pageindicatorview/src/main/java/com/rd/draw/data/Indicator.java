@@ -14,6 +14,8 @@ public class Indicator {
     public static final int DEFAULT_PADDING_DP = 8;
     public static final int IDLE_ANIMATION_DURATION = 250;
 
+    public static final int DEFAULT_SELECTED_WIDTH = 16;
+
     private int height;
     private int width;
     private int radius;
@@ -51,6 +53,7 @@ public class Indicator {
     private AnimationType animationType;
     private RtlMode rtlMode;
 
+    private int selectedWidth; // For "worm2" animation only
     private int sliderWidth; // For "slider" animation only
 
     public int getHeight() {
@@ -279,6 +282,14 @@ public class Indicator {
 
     public void setRtlMode(RtlMode rtlMode) {
         this.rtlMode = rtlMode;
+    }
+
+    public int getSelectedWidth() {
+        return selectedWidth;
+    }
+
+    public void setSelectedWidth(int selectedWidth) {
+        this.selectedWidth = selectedWidth;
     }
 
     public int getSliderWidth() {

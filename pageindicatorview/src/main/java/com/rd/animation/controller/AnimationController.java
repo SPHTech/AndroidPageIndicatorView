@@ -84,6 +84,14 @@ public class AnimationController {
             case SCALE_DOWN:
                 scaleDownAnimation();
                 break;
+
+            case WORM2:
+                worm2Animation();
+                break;
+
+            case SLIDER:
+                sliderAnimation();
+                break;
         }
     }
 
@@ -283,6 +291,55 @@ public class AnimationController {
         BaseAnimation animation = valueController
                 .scaleDown()
                 .with(unselectedColor, selectedColor, radiusPx, scaleFactor)
+                .duration(animationDuration);
+
+        if (isInteractive) {
+            animation.progress(progress);
+        } else {
+            animation.start();
+        }
+
+        runningAnimation = animation;
+    }
+    private void worm2Animation() {
+        int fromPosition = indicator.isInteractiveAnimation() ? indicator.getSelectedPosition() : indicator.getLastSelectedPosition();
+        int toPosition = indicator.isInteractiveAnimation() ? indicator.getSelectingPosition() : indicator.getSelectedPosition();
+
+        int from = CoordinatesUtils.getCoordinate(indicator, fromPosition);
+        int to = CoordinatesUtils.getCoordinate(indicator, toPosition);
+        boolean isRightSide = toPosition > fromPosition;
+
+        int radiusPx = indicator.getRadius();
+        long animationDuration = indicator.getAnimationDuration();
+
+        BaseAnimation animation = valueController
+                .worm2()
+                .with(from, to, radiusPx, isRightSide)
+                .duration(animationDuration);
+
+        if (isInteractive) {
+            animation.progress(progress);
+        } else {
+            animation.start();
+        }
+
+        runningAnimation = animation;
+    }
+
+    private void sliderAnimation() {
+        int fromPosition = indicator.isInteractiveAnimation() ? indicator.getSelectedPosition() : indicator.getLastSelectedPosition();
+        int toPosition = indicator.isInteractiveAnimation() ? indicator.getSelectingPosition() : indicator.getSelectedPosition();
+
+        int from = CoordinatesUtils.getCoordinate(indicator, fromPosition);
+        int to = CoordinatesUtils.getCoordinate(indicator, toPosition);
+        boolean isRightSide = toPosition > fromPosition;
+
+        int radiusPx = indicator.getRadius();
+        long animationDuration = indicator.getAnimationDuration();
+
+        BaseAnimation animation = valueController
+                .slider()
+                .with(from, to, radiusPx, isRightSide)
                 .duration(animationDuration);
 
         if (isInteractive) {

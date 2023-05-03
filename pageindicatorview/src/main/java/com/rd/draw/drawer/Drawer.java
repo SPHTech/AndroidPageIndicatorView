@@ -19,6 +19,8 @@ public class Drawer {
     private DropDrawer dropDrawer;
     private SwapDrawer swapDrawer;
     private ScaleDownDrawer scaleDownDrawer;
+    private Worm2Drawer worm2Drawer;
+    private SliderDrawer sliderDrawer;
 
     private int position;
     private int coordinateX;
@@ -39,6 +41,8 @@ public class Drawer {
         dropDrawer = new DropDrawer(paint, indicator);
         swapDrawer = new SwapDrawer(paint, indicator);
         scaleDownDrawer = new ScaleDownDrawer(paint, indicator);
+        worm2Drawer = new Worm2Drawer(paint, indicator);
+        sliderDrawer = new SliderDrawer(paint, indicator);
     }
 
     public void setup(int position, int coordinateX, int coordinateY) {
@@ -48,7 +52,7 @@ public class Drawer {
     }
 
     public void drawBasic(@NonNull Canvas canvas, boolean isSelectedItem) {
-        if (colorDrawer != null) {
+        if (basicDrawer != null) {
             basicDrawer.draw(canvas, position, isSelectedItem, coordinateX, coordinateY);
         }
     }
@@ -104,6 +108,18 @@ public class Drawer {
     public void drawScaleDown(@NonNull Canvas canvas, @NonNull Value value) {
         if (scaleDownDrawer != null) {
             scaleDownDrawer.draw(canvas, value, position, coordinateX, coordinateY);
+        }
+    }
+
+    public void drawWorm2(@NonNull Canvas canvas, @NonNull Value value) {
+        if (worm2Drawer != null) {
+            worm2Drawer.draw(canvas, value, coordinateX, coordinateY);
+        }
+    }
+
+    public void drawSlider(@NonNull Canvas canvas, @NonNull Value value) {
+        if (sliderDrawer != null) {
+            sliderDrawer.draw(canvas, value, coordinateX, coordinateY);
         }
     }
 }

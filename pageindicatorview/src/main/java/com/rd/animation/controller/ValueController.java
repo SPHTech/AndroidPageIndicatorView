@@ -16,6 +16,8 @@ public class ValueController {
     private DropAnimation dropAnimation;
     private SwapAnimation swapAnimation;
     private ScaleDownAnimation scaleDownAnimation;
+    private Worm2Animation worm2Animation;
+    private SliderAnimation sliderAnimation;
 
     private UpdateListener updateListener;
 
@@ -106,5 +108,23 @@ public class ValueController {
         }
 
         return scaleDownAnimation;
+    }
+
+    @NonNull
+    public Worm2Animation worm2() {
+        if (worm2Animation == null) {
+            worm2Animation = new Worm2Animation(updateListener);
+        }
+
+        return worm2Animation;
+    }
+
+    @NonNull
+    public SliderAnimation slider() {
+        if (sliderAnimation == null) {
+            sliderAnimation = new SliderAnimation(updateListener);
+        }
+
+        return sliderAnimation;
     }
 }

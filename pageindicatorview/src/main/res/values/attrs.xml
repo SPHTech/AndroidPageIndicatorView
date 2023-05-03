@@ -46,6 +46,7 @@
             <enum name="off" value="1" />
             <enum name="auto" value="2" />
         </attr>
+        <attr name="piv_selectedWidth" format="dimension" />
         <attr name="piv_sliderWidth" format="dimension"/>
     </declare-styleable>
 

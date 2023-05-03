@@ -8,7 +8,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import androidx.annotation.NonNull;
 
 import com.rd.animation.controller.ValueController;
-import com.rd.animation.data.type.WormAnimationValue;
+import com.rd.animation.data.type.SliderAnimationValue;
 
 public class SliderAnimation extends BaseAnimation<AnimatorSet> {
 
@@ -23,11 +23,11 @@ public class SliderAnimation extends BaseAnimation<AnimatorSet> {
     int rectLeftEdge;
     int rectRightEdge;
 
-    private WormAnimationValue value;
+    private SliderAnimationValue value;
 
     public SliderAnimation(@NonNull ValueController.UpdateListener listener) {
         super(listener);
-        value = new WormAnimationValue();
+        value = new SliderAnimationValue();
     }
 
     @NonNull
@@ -99,7 +99,7 @@ public class SliderAnimation extends BaseAnimation<AnimatorSet> {
             int toValue,
             long duration,
             final boolean isReverse,
-            final WormAnimationValue value) {
+            final SliderAnimationValue value) {
 
         ValueAnimator anim = ValueAnimator.ofInt(fromValue, toValue);
         anim.setInterpolator(new AccelerateDecelerateInterpolator());
@@ -114,7 +114,7 @@ public class SliderAnimation extends BaseAnimation<AnimatorSet> {
         return anim;
     }
 
-    private void onAnimateUpdated(@NonNull WormAnimationValue value, @NonNull ValueAnimator animation, final boolean isReverse) {
+    private void onAnimateUpdated(@NonNull SliderAnimationValue value, @NonNull ValueAnimator animation, final boolean isReverse) {
         int rectEdge = (int) animation.getAnimatedValue();
 
         if (isRightSide) {

@@ -60,6 +60,14 @@ public class MeasureController {
             }
         }
 
+        if (indicator.getAnimationType() == AnimationType.WORM2) {
+            if (orientation == Orientation.HORIZONTAL) {
+                desiredWidth += (indicator.getSelectedWidth() - radius * 2);
+            } else {
+                desiredHeight += (indicator.getSelectedWidth() - radius * 2);
+            }
+        }
+
         int horizontalPadding = paddingLeft + paddingRight;
         int verticalPadding = paddingTop + paddingBottom;
 

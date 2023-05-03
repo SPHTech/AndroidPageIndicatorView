@@ -66,6 +66,22 @@ public class HomeActivity extends BaseActivity {
 
         final ViewPager pager = findViewById(R.id.viewPager);
         pager.setAdapter(adapter);
+        pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                pageIndicatorView.setSelection(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         pageIndicatorView = findViewById(R.id.pageIndicatorView);
     }

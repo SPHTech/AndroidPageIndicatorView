@@ -135,6 +135,11 @@ public class AttributeController {
             stroke = 0;
         }
 
+        int selectedWidth = (int) typedArray.getDimension(R.styleable.PageIndicatorView_piv_selectedWidth, DensityUtils.dpToPx(Indicator.DEFAULT_SELECTED_WIDTH));
+        if (selectedWidth < radius * 2) {
+            selectedWidth = radius * 2;
+        }
+
         int sliderWidth = (int) typedArray.getDimension(R.styleable.PageIndicatorView_piv_sliderWidth, DensityUtils.dpToPx(SliderAnimation.DEFAULT_SLIDER_WIDTH));
 
         indicator.setRadius(radius);
@@ -142,6 +147,7 @@ public class AttributeController {
         indicator.setPadding(padding);
         indicator.setScaleFactor(scaleFactor);
         indicator.setStroke(stroke);
+        indicator.setSelectedWidth(selectedWidth);
         indicator.setSliderWidth(sliderWidth);
     }
 
