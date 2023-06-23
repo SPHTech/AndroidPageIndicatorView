@@ -1,4 +1,6 @@
 
+### **AndroidPageIndicatorView**
+This repository is forked so as to be able to provide the dependency under our own github packages.
 
 ### **PageIndicatorView**
 [ ![Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) ](https://bintray.com/romandanylyk/maven/pageindicatorview/_latestVersion)[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-PageIndicatorView-green.svg?style=true)](https://android-arsenal.com/details/1/4555)  
